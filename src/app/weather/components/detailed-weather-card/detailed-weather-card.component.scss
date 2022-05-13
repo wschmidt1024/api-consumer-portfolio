@@ -1,0 +1,17 @@
+.weather-detailed-card {
+  background-color: #b4b8ed;
+  border: 1px solid #1121ed;
+  border-radius: 0.25rem;
+  min-height: 495px;
+  margin: 0 30px 10px 0;
+  padding: 0.5rem 0.5rem;
+
+  .day {
+
+    .day-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}

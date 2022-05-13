@@ -1,0 +1,30 @@
+<div class="weather-summary-card">
+    <div class="day">
+        <div class="day-text">{{day(daily.dt)}}</div>
+    </div>
+    <div class="sky">
+        <div class="sky-icon"><img src="https://openweathermap.org/img/wn/{{daily.weather[0].icon}}@2x.png" /></div>
+        <div class="sky-text"><span>{{cloudiness(daily.clouds)}}</span></div>
+    </div>
+    <div class="measurements">
+        <div class="wind-details">
+            <span class="speed">{{daily.wind_speed.toFixed(0)}} mi/hr</span>
+            <span class="direction">from the {{daily.wind_deg | windDirection}}</span>
+        </div>
+        <div class="precipitation">
+            <span class="measurement" *ngIf="daily.rain">{{(daily.rain / 25.4).toFixed(2)}} inches</span>
+            <span class="measurement" *ngIf="!daily.rain">No precipitation</span>
+            <span class="chance" *ngIf="daily.pop > 0">{{daily.pop | percent:'1.0'}} chance</span>
+        </div>
+    </div>
+    <div class="temperature-row">
+        <div class="temperatures">
+            <span class="temp">{{daily.temp.min.toFixed(0)}}&deg;</span>
+            <span class="temp-level">Low</span>
+        </div>
+        <div class="temperatures">
+            <span class="temp">{{daily.temp.max.toFixed(0)}}&deg;</span>
+            <span class="temp-level">High</span>
+        </div>
+    </div>
+</div>

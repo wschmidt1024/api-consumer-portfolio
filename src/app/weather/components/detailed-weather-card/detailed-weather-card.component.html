@@ -1,0 +1,32 @@
+<div class="weather-detailed-card">
+    <div class="day">
+        <div class="day-text">{{day(daily.dt)}}</div>
+    </div>
+    <img src="https://openweathermap.org/img/wn/{{daily.weather[0].icon}}@4x.png" width="200" height="200" /><br>
+    Current: {{current.temp}}&deg; F<br>
+    Winds: {{daily.wind_speed}} m/hr {{daily.wind_deg | windDirection}}<br>
+    {{daily.clouds}}% cloud coverage<br>
+    {{daily.rain ? (daily.rain / 25.4).toFixed(4) : 0}} inches ({{(daily.pop * 100).toFixed(0)}}% chance)<br>
+
+    {{daily.temp.morn}} &deg;F | {{daily.temp.day}} &deg;F | {{daily.temp.eve}} &deg;F | {{daily.temp.night}} &deg;F<br>
+    Low: {{daily.temp.min}} &deg;F | High: {{daily.temp.max}} &deg;F<br>
+
+    <!-- <table>
+        <thead>
+            <th>Time</th>
+            <th>&nbsp;</th>
+            <th>Temperature</th>
+            <th>Wind</th>
+            <th>Rain</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hr of hourly | slice:0:3">
+                <td>{{hour(hr.dt)}}</td>
+                <td><img src="https://openweathermap.org/img/wn/{{hr.weather[0].icon}}.png" width="50" height="50" /></td>
+                <td>{{hr.temp.toFixed(0)}} &deg;F ({{hr.feels_like.toFixed(0)}} &deg;F)</td>
+                <td>{{hr.wind_speed.toFixed(0)}} m/hr {{hr.wind_deg | windDirection}} ({{hr.wind_gust.toFixed(0)}} m/hr {{hr.wind_deg | windDirection}})</td>
+                <td>{{hr?.rain ? (hr.rain['1h'] / 25.4).toFixed(4) : 0}} in</td>
+            </tr>
+        </tbody>
+    </table> -->
+</div>

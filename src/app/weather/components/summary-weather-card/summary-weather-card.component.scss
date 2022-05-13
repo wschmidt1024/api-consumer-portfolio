@@ -1,0 +1,87 @@
+.weather-summary-card {
+  background-color: #b4b8ed;
+  border: 1px solid #1121ed;
+  border-radius: 0.25rem;
+  min-height: 100px;
+  margin: 0 0 10px 0;
+  padding: 0.5rem 0.5rem;
+  width: 250px;
+
+  .day {
+
+    .day-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  .sky {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .sky-icon {
+      img {
+        height: 100px;
+        width: 100px;
+      }
+    }
+    .sky-text {
+      font-weight: 400;
+    }
+  }
+
+  .measurements {
+    display: flex;
+    justify-content: space-between;
+
+    .wind-details {
+      display: flex;
+      flex-direction: column;
+  
+      .speed {
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .direction {
+        font-size: 0.65rem;
+        text-align: center;
+      }
+    }
+
+    .precipitation {
+      display: flex;
+      flex-direction: column;
+  
+      .measurement {
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .chance {
+        font-size: 0.65rem;
+        text-align: center;
+      }
+    }
+  }
+
+  .temperature-row {
+    display: flex;
+    justify-content: space-between;
+
+    .temperatures {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 0 0 0;
+  
+      .temp {
+        font-size: 1.3rem;
+        text-align: center;
+      }
+      .temp-level {
+        font-size: 0.7rem;
+        text-align: center;
+      }
+    }
+  }
+}
