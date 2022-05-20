@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12">Updated: {{date(currentWeather.current.dt)}}</div>
-    <div *ngIf="user$ | async as user">Welcome, {{user.first}}</div>
+    <div *ngIf="currentUser$ | async as user">Welcome, {{user.first}}</div>
 </div>
 
 <div class="weather">

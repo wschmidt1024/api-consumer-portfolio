@@ -4,6 +4,8 @@ import { User } from '../models/user';
 
 import * as AppActions from './app.actions';
 
+export const rootStateKey = 'rootState';
+
 export interface RootAppState {
     user: User;
 }
@@ -14,7 +16,7 @@ const initialAppState: RootAppState = {
 
 export const rootAppReducer = createReducer(
     initialAppState,
-    on(AppActions.loadUserSuccess, (state, action) => ({
+    on(AppActions.loadUserSuccess, (state: RootAppState, action) => ({
         ...state,
         user: action.user
     })),

@@ -3,13 +3,14 @@ import { createAction, props } from '@ngrx/store';
 import { User } from '../models/user';
 
 export const rootAppKey = 'rootApp';
+const actionCategoryLoadUser = 'Load User';
 
-export const loadUser = createAction(`[${rootAppKey}] LoadUser`);
+export const loadUser = createAction(`[${actionCategoryLoadUser}] LoadUser`);
 export const loadUserSuccess = createAction(
-    `[${rootAppKey}] LoadUser Success`,
+    `[${actionCategoryLoadUser}] LoadUser Success`,
     props<{ user: User }>()
 );
 export const loadUserFailure = createAction(
-    `[${rootAppKey}] LoadUser Failure`,
+    `[${actionCategoryLoadUser}] LoadUser Failure`,
     props<{error: any}>()
 );

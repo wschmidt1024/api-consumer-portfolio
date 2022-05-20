@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import { Observable } from 'rxjs';
 
-import { User } from '../models/user';
 import { AppStateFacade } from '../+state/app.facade';
+import { User } from '../models/user';
 
 import { OneCallResponse } from './models/open-weather/one-call-response';
 import { OpenWeatherService } from './services/open-weather/open-weather.service';
@@ -15,11 +15,11 @@ import { OpenWeatherService } from './services/open-weather/open-weather.service
 })
 export class WeatherComponent implements OnInit {
   public currentWeather: OneCallResponse = new OneCallResponse();
-  public user$: Observable<User>;
+  public currentUser$: Observable<User>;
   public user: User | undefined;
 
   constructor(private openWeatherService: OpenWeatherService, private facade: AppStateFacade) {
-    this.user$ = this.facade.user$;
+    this.currentUser$ = this.facade.currentUser$;
   }
 
   ngOnInit(): void {
