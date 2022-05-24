@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-
-import * as AppActions from './+state/app.actions'
+import { AppStateFacade } from './+state/app.facade';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +10,11 @@ import * as AppActions from './+state/app.actions'
 export class AppComponent implements OnInit  {
   title = 'API Consumer Portfolio';
 
-  constructor(private store: Store) {}
+  constructor(private stateFacade: AppStateFacade) {}
 
   ngOnInit(): void {
-    this.store.dispatch(AppActions.loadUserSuccess({ user: { first: 'Phillip' } }));
+    this.stateFacade.loadUser();
+    this.stateFacade.loadWeatherLocations();
+    this.stateFacade.weatherLocations$.subscribe(r => console.log('locations', r));
   }
 }

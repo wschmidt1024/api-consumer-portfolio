@@ -5,7 +5,7 @@ import { User } from '../models/user';
 export const rootAppKey = 'rootApp';
 const actionCategoryLoadUser = 'Load User';
 
-export const loadUser = createAction(`[${actionCategoryLoadUser}] LoadUser`);
+export const loadUser = createAction(`[${actionCategoryLoadUser}] Request`);
 export const loadUserSuccess = createAction(
     `[${actionCategoryLoadUser}] LoadUser Success`,
     props<{ user: User }>()

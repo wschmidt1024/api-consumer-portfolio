@@ -3,6 +3,14 @@
     <div *ngIf="currentUser$ | async as user">Welcome, {{user.first}}</div>
 </div>
 
+<div>
+    <mat-select (selectionChange)="locationChange($event)" >
+        <mat-option *ngFor="let location of locations$ | async" [value]="location.name">
+            {{location.name}}
+        </mat-option>
+    </mat-select>
+</div>
+
 <div class="weather">
     <div class="today">
         <weather-detailed-weather-card [current]="currentWeather.current" [daily]="currentWeather.daily[0]" [hourly]="currentWeather.hourly"></weather-detailed-weather-card>
